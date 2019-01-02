@@ -8,4 +8,4 @@ You can download the app from iTerm2 [downloads page](https://www.iterm2.com/dow
 
 It gives you option to set key mappings under iTerm2 preferences (⌘,) -> Profiles -> Keys 
 
-~[iTerm Kep Mappings](https://raw.githubusercontent.com/apoorvam/mac-dev-setup/master/assets/iTerm_Key_Mappings.png)
+![iTerm Kep Mappings](https://raw.githubusercontent.com/apoorvam/mac-dev-setup/master/assets/iTerm_Key_Mappings.png)
