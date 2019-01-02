@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Git · GitBook</title>
+        <title>Go · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../iTerm/" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="../gitbook/" />
     
 
     </head>
@@ -102,9 +100,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../git/">
             
-                <a href="./">
+                <a href="../git/">
             
                     
                     Git
@@ -173,9 +171,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../go/">
+        <li class="chapter active" data-level="1.6" data-path="./">
             
-                <a href="../go/">
+                <a href="./">
             
                     
                     Go
@@ -216,7 +214,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Git</a>
+        <a href=".." >Go</a>
     </h1>
 </div>
 
@@ -231,33 +229,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="git">Git</h1>
-<p>Git is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people.</p>
+                                <h1 id="go">Go</h1>
+<p>Golang is an open source programming language maintained by Google. </p>
 <h2 id="installation">Installation</h2>
-<pre><code>$ brew install git
-</code></pre><p>To set username and email to be used for your Git commits globally, you can run following commands:</p>
-<pre><code>$ git config --global user.name &quot;Your Name Here&quot;
-$ git config --global user.email &quot;your_email@youremail.com&quot;
-</code></pre><h2 id="generating-a-new-ssh-key">Generating a new SSH key</h2>
-<p>Run below command to create a new ssh key, using the provided email as a label. This generates a public/private rsa key pair.</p>
-<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
-</code></pre><p>When you&apos;re prompted to &quot;Enter a file in which to save the key,&quot; press Enter. This accepts the default file location. You can also set a passphrase if required, else you can just press Enter.</p>
-<h2 id="adding-your-ssh-key-to-the-ssh-agent">Adding your SSH key to the ssh-agent</h2>
-<p>Start the ssh-agent in the background.</p>
-<pre><code>$ eval &quot;$(ssh-agent -s)&quot;
-Agent pid 59566
-</code></pre><p>If you&apos;re using macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain.</p>
-<pre><code>Host *
- AddKeysToAgent yes
- UseKeychain yes
- IdentityFile ~/.ssh/id_rsa
-</code></pre><p>Add your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.</p>
-<pre><code>ssh-add -K ~/.ssh/id_rsa
-</code></pre><h2 id="add-ssh-key-to-github-account">Add SSH key to Github account</h2>
-<p>Copy your SSH key by issuing command:</p>
-<pre><code>$ pbcopy &lt; ~/.ssh/id_rsa.pub
-</code></pre><p>Paste it under Profile Settings of Github -&gt; SSH Keys</p>
-<p>This enables you to use SSH for pushing your commits instead of https, after updating your remote url.</p>
+<p>Go can be installed by brew as:</p>
+<pre><code>$ brew install go
+</code></pre><p>You can run <code>go version</code> to verify installation and to check version.</p>
+<h2 id="setup-workspace">Setup workspace</h2>
+<p>Go has a unique approach of managing workspace for all your Golang projects, dependencies, packages etc. Firstly, you will have to set environment variables for this workspace. <code>GOROOT</code> is the location of Go installation. This should be added to PATH variable which looks like:</p>
+<pre><code>export GOROOT= /usr/local/Cellar/go/1.4.2/libexec
+export PATH=$PATH:$GOROOT
+</code></pre><p>You can also add this environment to shell config file like <code>.zshrc</code>, <code>.bashrc</code>.</p>
+<p>Consider <code>$HOME/go</code> to be your Go project workspace. To setup your workspace, you will need to create three directories within it as follows.</p>
+<pre><code>mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
+</code></pre><p><code>GOPATH</code> variable should be set to location of Go project workspace. Within this workspace, the src directory holds all the source code, pkg holds the compiled bits, and bin directory holds all the executables. As bin holds all the executables, this should be added to PATH as well.</p>
+<pre><code>export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
+</code></pre><h2 id="test-installation">Test installation</h2>
+<p>A simple go program can be written and tested to check the correctness of our installation.</p>
+<p>A file named <code>test.go</code> can be created in <code>$GOPATH/src</code> with program written as:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main(){
+    fmt.Printf(&quot;Testing go installation. It works!!\n&quot;)
+}
+</code></pre><p>Run program by:</p>
+<pre><code>$ go run test.go
+Testing go installation. It works!!
+</code></pre><p>If the message is printed as shown, then the Go installation is working properly. </p>
+<p>This creates a binary called <code>test</code> in <code>GOBIN</code> which is also added to <code>PATH</code> variable. So you can run <code>test</code> from anywhere to run this program.</p>
 
                                 
                                 </section>
@@ -285,14 +288,10 @@ Agent pid 59566
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../gitbook/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Gitbook">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../iTerm/" class="navigation navigation-next " aria-label="Next page: iTerm">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -301,7 +300,7 @@ Agent pid 59566
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.2","depth":1,"next":{"title":"iTerm","level":"1.3","depth":1,"path":"iTerm/README.md","ref":"iTerm/README.md","articles":[{"title":"Zsh","level":"1.3.1","depth":2,"path":"iTerm/zsh.md","ref":"iTerm/zsh.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git/README.md","mtime":"2019-01-02T20:33:25.702Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-02T20:56:00.319Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Go","level":"1.6","depth":1,"previous":{"title":"Gitbook","level":"1.5","depth":1,"path":"gitbook/README.md","ref":"gitbook/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"go/README.md","mtime":"2019-01-02T20:52:35.063Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-02T20:56:00.319Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
