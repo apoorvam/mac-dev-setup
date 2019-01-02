@@ -21,16 +21,9 @@ Run below command to create a new ssh key, using the provided email as a label. 
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
-When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
-
- Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
-Enter passphrase (empty for no passphrase): [Type a passphrase]
-Enter same passphrase again: [Type passphrase again]
+When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location. You can also set a passphrase if required, else you can just press Enter.
 
 ## Adding your SSH key to the ssh-agent
-
-Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys and generated a new SSH key. When adding your SSH key to the agent, use the default macOS ssh-add command, and not an application installed by macports, homebrew, or some other external source.
 
 Start the ssh-agent in the background.
 
