@@ -7,3 +7,4 @@
 	* [Zsh](iTerm/zsh.md)
 * [Npm](npm/README.md)
 * [Gitbook](gitbook/README.md)
+* [Go](go/README.md)
