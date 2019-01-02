@@ -1,6 +1,6 @@
 # Gitbook
 
-Gitbook is an easy to use solution to write, publish and host books. It is the easiest solution for publishing your content and collaborating on it.
+[Gitbook](https://www.gitbook.com) is an easy to use solution to write, publish and host books. It is the easiest solution for publishing your content and collaborating on it.
 
 ## Installation
 
