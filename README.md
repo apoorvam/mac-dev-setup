@@ -1,4 +1,4 @@
-# Mac OS Dev Setup
+# Mac OS Dev Setup [![Build Status](https://travis-ci.org/apoorvam/mac-dev-setup.svg?branch=master)](https://travis-ci.org/apoorvam/mac-dev-setup)
 
 This guide is to cover the steps for installing commonly used tools for setting up development environment.
 
