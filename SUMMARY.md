@@ -8,3 +8,4 @@
 * [Npm](npm/README.md)
 * [Gitbook](gitbook/README.md)
 * [Go](go/README.md)
+* [Sublime Text](sublime_text/README.md)
