@@ -1,4 +1,4 @@
-# Mac OSX Dev Setup Guide [![Build Status](https://travis-ci.org/apoorvam/mac-dev-setup.svg?branch=master)](https://travis-ci.org/apoorvam/mac-dev-setup)
+# Mac OSX Development Setup Guide [![Build Status](https://travis-ci.org/apoorvam/mac-dev-setup.svg?branch=master)](https://travis-ci.org/apoorvam/mac-dev-setup)
 
 This guide is to cover the steps for installing commonly used tools for setting up development environment on a new Mac box. I have tried all of it on Mac Mountain Lion, Mojave and Mavericks.  I plan to add documentation on installation details at one place for common tools and also tips and tricks in usage of these tools which can be very effective during development.
 
