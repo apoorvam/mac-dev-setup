@@ -13,7 +13,7 @@ $ source ~/.zshrc
 $ brew install rbenv
 ```
 
-You can install particular version of Ruby as `rbenv install 2.3.4`.
+You can install particular version of Ruby as `rbenv install 2.3.4`. To set a existing ruby version to repository locally, you can run `rbenv local 2.3.4`
 
 ## Bundler
 
