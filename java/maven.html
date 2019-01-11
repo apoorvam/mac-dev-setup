@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Go · GitBook</title>
+        <title>Apache Maven · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../sublime_text/" />
     
-    
-    <link rel="prev" href="../gitbook/" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -173,9 +171,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="./">
+        <li class="chapter " data-level="1.6" data-path="../go/">
             
-                <a href="./">
+                <a href="../go/">
             
                     
                     Go
@@ -199,9 +197,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="../java/">
+        <li class="chapter " data-level="1.8" data-path="./">
             
-                <a href="../java/">
+                <a href="./">
             
                     
                     Java
@@ -213,9 +211,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" data-path="../java/maven.html">
+        <li class="chapter active" data-level="1.8.1" data-path="maven.html">
             
-                <a href="../java/maven.html">
+                <a href="maven.html">
             
                     
                     Apache Maven
@@ -261,7 +259,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Go</a>
+        <a href=".." >Apache Maven</a>
     </h1>
 </div>
 
@@ -276,39 +274,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="go">Go</h1>
-<p>Golang is an open source programming language maintained by Google. </p>
+                                <h1 id="apache-maven">Apache Maven</h1>
 <h2 id="installation">Installation</h2>
-<p>Go can be installed by brew as:</p>
-<pre><code>$ brew install go
-</code></pre><p>You can run <code>go version</code> to verify installation and to check version.</p>
-<h2 id="setup-workspace">Setup workspace</h2>
-<p>Go has a unique approach of managing workspace for all your Golang projects, dependencies, packages etc. Firstly, you will have to set environment variables for this workspace. <code>GOROOT</code> is the location of Go installation. This should be added to PATH variable which looks like:</p>
-<pre><code>export GOROOT= /usr/local/Cellar/go/1.4.2/libexec
-export PATH=$PATH:$GOROOT
-</code></pre><p>You can also add this environment to shell config file like <code>.zshrc</code>, <code>.bashrc</code>.</p>
-<p>Consider <code>$HOME/go</code> to be your Go project workspace. To setup your workspace, you will need to create three directories within it as follows.</p>
-<pre><code>mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
-</code></pre><p><code>GOPATH</code> variable should be set to location of Go project workspace. Within this workspace, the src directory holds all the source code, pkg holds the compiled bits, and bin directory holds all the executables. As bin holds all the executables, this should be added to PATH as well.</p>
-<pre><code>export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH/bin
-</code></pre><h2 id="test-installation">Test installation</h2>
-<p>A simple go program can be written and tested to check the correctness of our installation.</p>
-<p>A file named <code>test.go</code> can be created in <code>$GOPATH/src</code> with program written as:</p>
-<pre><code>package main
-
-import &quot;fmt&quot;
-
-func main(){
-    fmt.Printf(&quot;Testing go installation. It works!!\n&quot;)
-}
-</code></pre><p>Run program by:</p>
-<pre><code>$ go run test.go
-Testing go installation. It works!!
-</code></pre><p>If the message is printed as shown, then the Go installation is working properly. </p>
-<p>This creates a binary called <code>test</code> in <code>GOBIN</code> which is also added to <code>PATH</code> variable. So you can run <code>test</code> from anywhere to run this program.</p>
-
+<p>The installation of Apache Maven is a simple process of extracting the archive and adding the <code>bin</code> folder with the <code>mvn</code> command to the <code>PATH</code>.</p>
+<ul>
+<li><p>Ensure <code>JAVA_HOME</code> environment variable is set and points to your JDK installation</p>
+</li>
+<li><p>Download <a href="http://maven.apache.org/download.cgi" target="_blank">Apache Maven archive</a> and extract as:</p>
+</li>
+</ul>
+<pre><code>$ unzip apache-maven-3.6.0-bin.zip
+or 
+$ tar xzvf apache-maven-3.6.0-bin.tar.gz
+</code></pre><p>Set the location of <code>apache-maven-3.6.0</code> extracted as <code>M2_HOME</code>. You can add it to <code>~/.zshrc</code> profile. Also, add the <code>bin</code> directory of this to <code>PATH</code>.</p>
+<pre><code>$ export M2_HOME=/Users/apoorvam/apache-maven-3.6.0
+$ export PATH=$PATH:$M2_HOME/bin
+</code></pre><p>To verify installation, you can run <code>mvn -version</code>: </p>
+<pre><code>$ mvn -version
+Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-24T14:41:47-04:00)
+Maven home: /Users/apoorvam/apache-maven-3.6.0
+Java version: 1.8.0_65, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: &quot;mac os x&quot;, version: &quot;10.14.2&quot;, arch: &quot;x86_64&quot;, family: &quot;mac&quot;
+</code></pre>
                                 
                                 </section>
                             
@@ -335,14 +323,10 @@ Testing go installation. It works!!
 
             
                 
-                <a href="../gitbook/" class="navigation navigation-prev " aria-label="Previous page: Gitbook">
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Java">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../sublime_text/" class="navigation navigation-next " aria-label="Next page: Sublime Text">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -351,7 +335,7 @@ Testing go installation. It works!!
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Go","level":"1.6","depth":1,"next":{"title":"Sublime Text","level":"1.7","depth":1,"path":"sublime_text/README.md","ref":"sublime_text/README.md","articles":[]},"previous":{"title":"Gitbook","level":"1.5","depth":1,"path":"gitbook/README.md","ref":"gitbook/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"go/README.md","mtime":"2019-01-04T19:02:03.106Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-11T17:49:53.078Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Apache Maven","level":"1.8.1","depth":2,"previous":{"title":"Java","level":"1.8","depth":1,"path":"java/README.md","ref":"java/README.md","articles":[{"title":"Apache Maven","level":"1.8.1","depth":2,"path":"java/maven.md","ref":"java/maven.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/maven.md","mtime":"2019-01-11T17:46:32.139Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-11T17:49:53.078Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
