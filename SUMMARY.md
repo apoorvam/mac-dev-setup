@@ -5,7 +5,7 @@
 * [Git](git/README.md)
 * [iTerm](iTerm/README.md)
 	* [Zsh](iTerm/zsh.md)
-* [Npm](npm/README.md)
+* [Node/Npm](npm/README.md)
 * [Gitbook](gitbook/README.md)
 * [Go](go/README.md)
 * [Sublime Text](sublime_text/README.md)

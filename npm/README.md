@@ -1,4 +1,4 @@
-# Npm
+# Node/Npm
 
 `npm` makes it easy for JavaScript developers to share and reuse code. 
 
