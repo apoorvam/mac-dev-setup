@@ -11,3 +11,10 @@ Feel free to contribute by sending a pull request or create new issues on [GitHu
 This is a open source guide and is generated using GitBook. For steps on how to install GitBook, refer this [page](https://apoorvam.github.io/mac-dev-setup/gitbook/).
 
 Like it? [Let me know](https://twitter.com/ItsApoorvaHere).
+
+#### Build from source
+
+* Install `node` and `npm`
+* Run `npm install gitbook-cli -g`
+* Run `gitbook build` to build project
+* Serve the generated webpage. Optionally, you can install `go get github.com/apoorvam/serve` which downloads binary to `$GOPATH/bin` and run `cd _book & serve .`
